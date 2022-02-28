@@ -10,4 +10,4 @@ async function mainEvent() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
-// Lab 5 Diego 
+// Lab 5
