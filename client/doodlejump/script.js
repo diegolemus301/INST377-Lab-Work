@@ -1,3 +1,6 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-plusplus */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
@@ -33,12 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
   function createPlatforms() {
     for (let i = 0; i < platformCount; i++) {
       let platGap = 600 / platformCount;
       let newPlatBottom = 100 + i * platGap;
-      let newPlatform = new Platform (newPlatBottom);
+      let newPlatform = new Platform(newPlatBottom);
       platforms.push(newPlatform);
       console.log(platforms);
     }
@@ -46,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function movePlatforms() {
     if (doodlerBottomSpace > 200) {
-      platforms.forEach(platform => {
+      platforms.forEach((platform) => {
+        // eslint-disable-next-line no-param-reassign
         platform.bottom -= 4;
         let visual = platform.visual;
         visual.style.bottom = `${platform.bottom}px`;
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
           platforms.shift();
           console.log(platforms);
           score++;
-          var newPlatform = new Platform(600);
+          let newPlatform = new Platform(600);
           platforms.push(newPlatform);
         }
       });
@@ -81,13 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (doodlerBottomSpace <= 0) {
         gameOver();
       }
-      platforms.forEach(platform => {
+      platforms.forEach((platform) => {
         if (
-          (doodlerBottomSpace >= platform.bottom) &&
-            (doodlerBottomSpace <= (platform.bottom + 15)) &&
-            ((doodlerLeftSpace + 60) >= platform.left) &&
-            (doodlerLeftSpace <= (platform.left + 85)) &&
-            !isJumping
+          (doodlerBottomSpace >= platform.bottom)
+            && (doodlerBottomSpace <= (platform.bottom + 15))
+            && ((doodlerLeftSpace + 60) >= platform.left)
+            && (doodlerLeftSpace <= (platform.left + 85))
+            && !isJumping
         ) {
           console.log('tick');
           startPoint = doodlerBottomSpace;
@@ -178,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
   }
-
 
   function start() {
     if (!isGameOver) {
