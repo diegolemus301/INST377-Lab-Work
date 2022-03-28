@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel= 'stylesheet' href= 'styles.css'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body class= "p-3">
+        <div class="notification is-warning">
+            Diego Lemus Lab 7
+          </div>
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-one-quarter is-8-mobile">
+              <form class="box" method="GET">
+                <div class="field">
+                  <label for="resto_name">Restaurant Name</label>
+                  <div class="control">
+                    <input id="resto_name" class="input" type="text">
+                  </div>
+                </div>
+      
+                <div class="field">
+                    <label for="zip_code">ZIP Code</label>
+                    <div class="control">
+                      <input id="zip_code" class="input" type="text">
+                  </div>
+                </div>
+
+                <div class= "field">
+                    <label class= "label">Veggie or Vegan?</label>
+                    <div class= "control">
+                        <input id= "veggie-type"
+                               type= "radio"
+                               value= "veggie" />
+                        <label for= "veggie-type" class= "radio-label">Veggie</label>
+                        <input id= "vegan-type" 
+                               type= "radio"
+                               value= "vegan" />
+                        <label for= "vegan-type" class= "radio-label">Vegan</label>
+                    </div>
+                </div>
+
+      
+                <button class="button is-primary">Change Restaurants</button>
+            </form>
+            </div>
+            <div class= "wrapper">
+            <div class="column is-one-third is-12-desktop">
+              <div class="card">
+                <div class="card-content">
+                  <div class="content">
+                    <h2>Restaurant List</h2>
+                    <ul class="resto-list"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src= "script.js"></script>
+    </body>
+</html>
